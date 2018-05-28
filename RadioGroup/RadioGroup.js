@@ -20,7 +20,7 @@ class RadioGroup extends Component {
 		})
 	}
 
-	handleClick = (e) => {
+	handleClick = (event) => {
 		this.setState({
 			[this.props.name]: event.target.value,
 			errors: {
