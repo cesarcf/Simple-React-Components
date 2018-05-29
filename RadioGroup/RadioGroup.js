@@ -6,16 +6,16 @@ class RadioGroup extends Component {
 		[this.props.name]: null,
 		errors: {
 			[`${this.props.name}IsModified`]: 'error', //null|error
-			[`${this.props.name}ErrorClass`]: 'error' //null|error
+			[`${this.props.name}ErrorClass`]: null //null|error
 		}
 	}
 
 	componentWillMount(){
 		this.setState({
-			[this.props.name]: this.props.value,
+			[this.props.name]: this.props.defaultValue,
 			errors:{
-				[`${this.props.name}IsModified`]: 'error',
-				[`${this.props.name}ErrorClass`]: 'error'
+				[`${this.props.name}IsModified`]: this.props.defaultValue ? null : 'error',
+				[`${this.props.name}ErrorClass`]: null
 			}
 		})
 	}
@@ -38,8 +38,9 @@ class RadioGroup extends Component {
 						return React.cloneElement(radioInput, {
 							id: `${this.props.name}-${index}`,
 							name: this.props.name,
-							onClick: this.handleClick
-						})//:ReactElement
+							onClick: this.handleClick,
+							defaultChecked: this.props.defaultValue == radioInput.props.value ? true : false
+						})
 					})
 				}
 			</div>
@@ -57,6 +58,7 @@ class RadioGroup extends Component {
 }
 
 RadioGroup.defaultProps = {
+	defaultValue: null,
 	className: 'radio-inline'
 };
 
