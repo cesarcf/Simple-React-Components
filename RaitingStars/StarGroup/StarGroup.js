@@ -27,7 +27,7 @@ class StarGroup extends Component {
 		event.preventDefault()
 		let newState = Object.assign({}, this.state)
 		let newTextActive = ''
-		let newStarts = newState.stars.map(star => {
+		let newStars = newState.stars.map(star => {
 
 			if(star.index <= index){
 				///Full Star
@@ -44,11 +44,11 @@ class StarGroup extends Component {
 		})
 
 
-		this.setState({ stars: newStarts, textActive: newTextActive })
+		this.setState({ stars: newStars, textActive: newTextActive })
 	}
 
 	componentWillMount(){
-		let newStarts = this.state.stars.map(star => {
+		let newStars = this.state.stars.map(star => {
 			star.active = (star.index <= this.props.score) ? 'star-active' : ''
 
 			return star
@@ -57,7 +57,7 @@ class StarGroup extends Component {
 		this.setState({
 			score: this.props.score,
 			textActive: this.state.stars[this.props.score].text,
-			stars: newStarts
+			stars: newStars
 		})
 	}
 
