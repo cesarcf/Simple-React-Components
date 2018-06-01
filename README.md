@@ -1,3 +1,5 @@
 # Simple-React-Components
-A simple example of composition with forms in React:
-[Video Example](https://s3-eu-west-1.amazonaws.com/github-cesarcf/react-form.mp4)
+A Examples of React Component:
+[Video Form](https://s3-eu-west-1.amazonaws.com/github-cesarcf/react-form.mp4)
+
+[Video Raiting Star](https://s3-eu-west-1.amazonaws.com/github-cesarcf/raiting-stars.mp4)
