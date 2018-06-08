@@ -1,2 +1,2 @@
-import RaitingStart from './RaitingStart'
-export default RaitingStart
+import RaitingStars from './RaitingStars'
+export default RaitingStars
